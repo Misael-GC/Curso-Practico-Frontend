@@ -8,3 +8,7 @@ sintaxis: --nombre- valor; */
     --hospital-green: #ACD9B2;
 }
 
+/* fuente copiada de la pagina  */
+body{
+    font-family: 'Quicksand', sans-serif;
+}
