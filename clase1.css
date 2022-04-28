@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+}
+.login{
+    width: 100%;
+    height: 10vh;
+    display: grid; /*con estos 2 se va a centrar vertical y horizontalmente*/
+    place-items: center;
+}
+
+.form-container{
+    display: grid;
+    grid-template-rows: auto; /* Aqui nos referimos a las filas del contenedor, auto es el espacio que el css desee */
+}
