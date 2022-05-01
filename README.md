@@ -1,6 +1,7 @@
 # Curso Práctico de Frontend 
 
-En este repositorio se encuentra un proyecto hecho solo con html y css, en el cual voy a seguir instrucciones del [Curso Práctico de Fronted Developer:](http://https://platzi.com/cursos/frontend-developer-practico/ "Curso Práctico de Fronted Developer:")
+En este repositorio se encuentra un proyecto hecho solo con html y css, en el cual voy a seguir instrucciones del [Curso Práctico de Fronted Developer:](https://platzi.com/cursos/frontend-developer-practico/ "Curso Práctico de Fronted Developer:")
+
 Contenido:
 
 + Uso de  variables de CSS para los colores, fuentes y tamaños de tu aplicación
@@ -8,7 +9,7 @@ Contenido:
 + Identificar las vistas y componentes de una página web.
 
 
-###Imagen
+##Imagen
 
 Imagen:
 
