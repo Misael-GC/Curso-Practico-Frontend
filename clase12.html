@@ -101,6 +101,28 @@
         width: 100%;
       }
     }
+
+    /*Aporte*/
+    .points {
+        display: flex;
+        justify-content: center;
+      }
+      .points > li {
+        background: var(--very-light-pink);
+        width: 8px;
+        height: 8px;
+        margin: 8px 6px;
+        border-radius: 50%;
+        list-style-type: none;
+        cursor: pointer;
+      }
+      .points > .active {
+        background: var(--hospital-green);
+      }
+      .points > li:hover {
+        background: var(--hospital-green);
+      }
+
     </style>
 </head>
 <body>
@@ -110,6 +132,13 @@
         <img src="./icons/icon_close.png" alt="close">
       </div>
       <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <!-- Aporte -->
+      <div class="points">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+      </div>
+      <!-- Aport -->
       <div class="product-info">
         <p>$35.00</p>
         <p>Bike</p>
@@ -123,6 +152,7 @@
         Add to cart
         </button>
       </div>
+      
     </aside>
 </body>
 </html>
