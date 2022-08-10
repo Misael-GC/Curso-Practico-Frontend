@@ -3,7 +3,7 @@
     const menuHamIcon = document.querySelector('.menu');
     const mobileMenu = document.querySelector('.mobile-menu');
     const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
-    const aside = document.querySelector('.product-detail');
+    const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
     const cardsContainer = document.querySelector('.cards-container');
 
     menuEmail.addEventListener('click', toggleDesktopMenu);
@@ -11,20 +11,20 @@
     menuCarritoIcon.addEventListener('click', toggleCarritoAside);
 
     function toggleDesktopMenu(){
-        const isASideClosed = aside.classList.contains('inactive');
+        const isASideClosed = shoppingCartContainer.classList.contains('inactive');
 
         if(!isASideClosed){ //si está abierto
-            aside.classList.add('inactive');//cierralo
+            shoppingCartContainer.classList.add('inactive');//cierralo
         }
 
         desktopMenu.classList.toggle('inactive');
         };
 
     function toggleMobileMenu(){
-        const isASideClosed = aside.classList.contains('inactive');
+        const isASideClosed = shoppingCartContainer.classList.contains('inactive');
 
         if(!isASideClosed){ //si está abierto
-            aside.classList.add('inactive');//cierralo
+            shoppingCartContainer.classList.add('inactive');//cierralo
         }
 
         mobileMenu.classList.toggle('inactive');
@@ -44,7 +44,7 @@
             desktopMenu.classList.add('inactive');
         }//aqui termina si en algun momento hay que delete it
 
-        aside.classList.toggle('inactive');
+        shoppingCartContainer.classList.toggle('inactive');
     }
 //codigo para que el usuario pueda subir un producto
     // const productList = [];
