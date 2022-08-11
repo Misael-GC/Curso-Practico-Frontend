@@ -8,6 +8,7 @@
     const productDetailContainer = document.querySelector('#productDetail');
     const cardsContainer = document.querySelector('.cards-container');
     const iconCarritoBack = document.querySelector(".icon1");
+    const darken = document.querySelector('.darken')
 
     menuEmail.addEventListener('click', toggleDesktopMenu);
     menuHamIcon.addEventListener('click', toggleMobileMenu);
@@ -65,12 +66,13 @@
         desktopMenu.classList.add('inactive');
         shoppingCartContainer.classList.add('inactive'); //siempre que habras un producto pon inactive
         productDetailContainer.classList.remove('inactive');//quit inactive
+
+        darken.classList.remove('inactive');
     }
     //aporte
     function displayInfoInProductDetail(event){
 
         const new_img_product_detail = event.path[0].src;
-
         const product_info = event.path[1].childNodes[1];
 
         const price = product_info.querySelector('div p:first-child');
@@ -85,12 +87,16 @@
 
         const product_detail_name = productDetailContainer.querySelector('.product-info p:nth-child(2)');
         product_detail_name.innerText = name.textContent;
+
+
+
         //este es el famoso evento donde podemos ver las propiedades de path
         console.log(event)
     }
 
     function closeProductDetailAside(){
         productDetailContainer.classList.add('inactive');
+        darken.classList.add('inactive');
     }
 //codigo para que el usuario pueda subir un producto
     // const productList = [];
