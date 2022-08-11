@@ -59,9 +59,34 @@
         shoppingCartContainer.classList.toggle('inactive');
     }
 
-    function openProductDetailAside(){
+    function openProductDetailAside(event){ //no se ejecuta hasta que pase el evento
+        displayInfoInProductDetail(event); //llamamos a la función
+        //code aport
+        desktopMenu.classList.add('inactive');
         shoppingCartContainer.classList.add('inactive'); //siempre que habras un producto pon inactive
         productDetailContainer.classList.remove('inactive');//quit inactive
+    }
+    //aporte
+    function displayInfoInProductDetail(event){
+
+        const new_img_product_detail = event.path[0].src;
+
+        const product_info = event.path[1].childNodes[1];
+
+        const price = product_info.querySelector('div p:first-child');
+        const name = product_info.querySelector('div p:nth-child(2)');
+
+        const product_detail_img = productDetailContainer.querySelector('img:nth-child(2)');
+        product_detail_img.setAttribute('src', new_img_product_detail);
+        product_detail_img.setAttribute('alt', name.textContent); //textcontent?
+
+        const product_detail_price = productDetailContainer.querySelector('.product-info p:nth-child(1)');
+        product_detail_price.innerText =price.textContent;
+
+        const product_detail_name = productDetailContainer.querySelector('.product-info p:nth-child(2)');
+        product_detail_name.innerText = name.textContent;
+        //este es el famoso evento donde podemos ver las propiedades de path
+        console.log(event)
     }
 
     function closeProductDetailAside(){
@@ -140,6 +165,7 @@ function renderProducts(arr){
 
 renderProducts(productList);
 
+// Aportes
 function closeCarritoAside () {
     shoppingCartContainer.classList.add('inactive');
     }
