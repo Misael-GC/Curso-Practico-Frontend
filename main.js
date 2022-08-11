@@ -7,11 +7,13 @@
     const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
     const productDetailContainer = document.querySelector('#productDetail');
     const cardsContainer = document.querySelector('.cards-container');
+    const iconCarritoBack = document.querySelector(".icon1");
 
     menuEmail.addEventListener('click', toggleDesktopMenu);
     menuHamIcon.addEventListener('click', toggleMobileMenu);
     menuCarritoIcon.addEventListener('click', toggleCarritoAside);
     productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
+    iconCarritoBack.addEventListener('click', closeCarritoAside);
 
     function toggleDesktopMenu(){
         const isASideClosed = shoppingCartContainer.classList.contains('inactive');
@@ -137,3 +139,7 @@ function renderProducts(arr){
 };
 
 renderProducts(productList);
+
+function closeCarritoAside () {
+    shoppingCartContainer.classList.add('inactive');
+    }
