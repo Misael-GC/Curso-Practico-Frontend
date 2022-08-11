@@ -1,14 +1,17 @@
     const menuEmail = document.querySelector('.navbar-email');
     const desktopMenu = document.querySelector('.desktop-menu');
     const menuHamIcon = document.querySelector('.menu');
-    const mobileMenu = document.querySelector('.mobile-menu');
     const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
+    const productDetailCloseIcon = document.querySelector('.product-detail-close')
+    const mobileMenu = document.querySelector('.mobile-menu');
     const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
+    const productDetailContainer = document.querySelector('#productDetail');
     const cardsContainer = document.querySelector('.cards-container');
 
     menuEmail.addEventListener('click', toggleDesktopMenu);
     menuHamIcon.addEventListener('click', toggleMobileMenu);
     menuCarritoIcon.addEventListener('click', toggleCarritoAside);
+    productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
 
     function toggleDesktopMenu(){
         const isASideClosed = shoppingCartContainer.classList.contains('inactive');
@@ -27,6 +30,7 @@
             shoppingCartContainer.classList.add('inactive');//cierralo
         }
 
+        closeProductDetailAside() 
         mobileMenu.classList.toggle('inactive');
     }
 
@@ -37,6 +41,12 @@
             mobileMenu.classList.add('inactive'); //cierralo
         }
 
+        const isProductDetailClosed = productDetailContainer.classList.contains('inactive'); //contains en las notas es un true o false, check it
+
+        if(!isProductDetailClosed){ //si está abierto
+            productDetailContainer.classList.add('inactive'); //cierralo
+        }
+
         //aqui va lo del menu desktop
         const isDesktopMenu = desktopMenu.classList.contains('inactive');
 
@@ -45,6 +55,15 @@
         }//aqui termina si en algun momento hay que delete it
 
         shoppingCartContainer.classList.toggle('inactive');
+    }
+
+    function openProductDetailAside(){
+        shoppingCartContainer.classList.add('inactive'); //siempre que habras un producto pon inactive
+        productDetailContainer.classList.remove('inactive');//quit inactive
+    }
+
+    function closeProductDetailAside(){
+        productDetailContainer.classList.add('inactive');
     }
 //codigo para que el usuario pueda subir un producto
     // const productList = [];
@@ -85,6 +104,7 @@ function renderProducts(arr){
 
         const productImg = document.createElement('img');
         productImg.setAttribute('src', product.image);
+        productImg.addEventListener('click', openProductDetailAside);
         // product = {name, price, image } -> product.image
 
         const productInfo = document.createElement('div');

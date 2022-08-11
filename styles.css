@@ -106,7 +106,7 @@ nav {
   top: 60px;
   right: 35px;
   background: var(--white); /*cambio clase 18*/
-  width: 100px;
+  width: 102px;
   height: auto;
   border: 1px solid var(--very-light-pink);
   border-radius: 6px;
@@ -157,6 +157,7 @@ display: inline-block;
   left: 0;
   width: 100%;
   padding: 24px;
+  /* transition: 400ms; */
 }
 
 .mobile-menu a{
@@ -301,14 +302,15 @@ aside {
 
 /* ProductDetail -> aside pero tiene otros estilos */
 .product-detail-close{
+  display: flex;
   background: var(--white);
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 24px;
+  left: 24px;
   z-index: 2;
-  padding: 7px;
+  padding: 1px;
   border-radius: 50%;
 }
 
