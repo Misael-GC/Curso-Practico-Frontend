@@ -21,9 +21,14 @@
 
         if(!isASideClosed){ //si está abierto
             shoppingCartContainer.classList.add('inactive');//cierralo
+            
         }
 
         desktopMenu.classList.toggle('inactive');
+        darken.classList.add('inactive');
+
+        closeProductDetailAside();
+        //code -lalalalal
         };
 
     function toggleMobileMenu(){
@@ -42,12 +47,14 @@
 
         if(!isMobileMenuClosed){ //si está abierto
             mobileMenu.classList.add('inactive'); //cierralo
+            // darken.classList.add('inactive');
         }
 
         const isProductDetailClosed = productDetailContainer.classList.contains('inactive'); //contains en las notas es un true o false, check it
 
         if(!isProductDetailClosed){ //si está abierto
             productDetailContainer.classList.add('inactive'); //cierralo
+            darken.classList.add('inactive');
         }
 
         //aqui va lo del menu desktop
@@ -59,6 +66,8 @@
 
         shoppingCartContainer.classList.toggle('inactive');
     }
+
+
 
     function openProductDetailAside(event){ //no se ejecuta hasta que pase el evento
         displayInfoInProductDetail(event); //llamamos a la función
